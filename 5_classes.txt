@@ -1,0 +1,18 @@
+1. Instead of  using createClass. Instead, we're creating a class that extends React.Component.
+2. Constructor function:
+  - Replace getInitialState
+  - before you set anything to the instance
+    you need to call super() which calls the constructor function of the thing we're extending,
+      in this case React.component.
+3.  no longer have commas between our properties since we're not in an object anymore.
+4.  PropTypes are moved out of the class and added afterwards,
+      just like we're used to doing with Stateless Functional Components
+5. When we use createClass,
+    the 'this' keyword is autobound for us.
+  Meaning, we don't have to worry about
+    which context the function using 'this' will be called in
+    since it will always be bound to the original context.
+  This isn't the case for classes.
+    We can use .bind
+      to fix this problem when we're passing in a function to another component (context)
+      or we can use our handy dandy arrow functions as we did passing updateItems to onFormSubmit.

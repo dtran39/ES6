@@ -1,0 +1,4 @@
+1. What is promise:
+  - a special kind of javascript object which contains another object.
+2. How do I access the data in a promise? I use `.then()`:
+3. How do I catch the errors from a promise chain? I use `.catch()`:

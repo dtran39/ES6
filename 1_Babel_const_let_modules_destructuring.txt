@@ -1,0 +1,28 @@
+1. Babel stage presets:
+  - We used Babel to transform our JSX into JavaScript
+  - We can also use Babel to transpile future versions of JavaScript
+      to present day JavaScript that browsers can understand
+2. New variable declarations with let and const:
+  - JavaScript is function scoped: only functions introduce new scopes.
+  - scope is the biggest differentiator between var and let
+    + let allows you to have code which is block scoped
+    + const is let for constants (values cannot be changed)
+  - Which to use:
+    + always default with const
+    + use let if variable is going to be mutated
+    + rarely use var
+3. import/export:
+  - modules: section of self contained code that should be able to be
+      added, removed, or edited from certain parts of your system
+        without breaking other parts of your system
+  - composing modules together is a great way to architect applications
+  - ES6 we have a standardized way of dealing with modules (import/export)
+    + export function abc
+    + import {abc} from './file'
+    Or import * as file from './file'
+  - why need export default:
+    + Because we can export quite freely anywhere in ES6
+    + -> Need a point of entry when we just declare the path don't specify objects in the import statement
+4. Object destructuring:
+  - Destructuring gives us a convenient way to extract values from data stored in objects and arrays.
+  var { onChangeEmail, email, onChangePassword, password, submit }  = props;

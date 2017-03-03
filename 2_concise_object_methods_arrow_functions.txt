@@ -1,0 +1,15 @@
+1. "Concise Object Methods" allow you to drop the ": function" part of a method.
+var actions = {
+  sayName: function () {  alert(this.name)},
+  takeStep: function () {  this.step++}
+}
+
+now:
+var actions = {
+  sayName () {    alert(this.name)  },
+  takeStep () {    this.step++  }
+}
+
+2. Arrow functions
+  - Purpose: more concise syntax and sharing lexical "this" with the parent scope.
+    + arrow functions don't create a new context -> preserve the previous context of this

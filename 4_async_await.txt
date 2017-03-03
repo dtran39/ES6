@@ -1,0 +1,4 @@
+1. Async/Await:
+  - beautiful way for writing asynchronous code that appears to be synchronous
+  -  every async function you write will return a promise,
+  - and every single thing you await will ordinarily be a promise

@@ -1,0 +1,21 @@
+1. Template strings
+  `Hello, ${name}. We've emailed you at ${email}. Your user id is ${id}.`
+2. Default parameters
+  function debounce (func, wait = 1000, immediate) Just like python
+3. Concise objects
+  Before
+  function getUser (username) {
+    const email = getEmail(username)
+    return {
+      username: username,
+      email: email
+    }
+  }
+  After
+  function getUser (username) {
+    const email = getEmail(username)
+    return {
+      username,
+      email
+    }
+  }
