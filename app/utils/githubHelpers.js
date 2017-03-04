@@ -13,15 +13,13 @@ function getRepos (username) {
 }
 
 function getTotalStars (repos) {
-  return repos.data.reduce(function (prev, current) {
-    return prev + current.stargazers_count
-  }, 0)
+  return repos.data.reduce((prev, current) => prev + current.stargazers_count, 0); // implicit return
 }
 
 function getPlayersData (player) {
   return getRepos(player.login)
     .then(getTotalStars)
-    .then(function (totalStars) {
+    .then((totalStars) =>  {
       return {
         followers: player.followers,
         totalStars: totalStars
@@ -37,14 +35,8 @@ function calculateScores (players) {
 }
 
 export function  getPlayersInfo(players) {
-  return axios.all(players.map(function (username) {
-    return getUserInfo(username)
-  }))
-  .then(function (info) {
-    return info.map(function (user) {
-      return user.data
-    })
-  })
+  return axios.all(players.map((username) => getUserInfo(username) ))
+  .then((info) => info.map((user) =>  user.data))
   .catch(function (err) {console.warn('Error in getPlayersInfo: ', err)})
 }
 export function  battle(players) {
@@ -52,5 +44,5 @@ export function  battle(players) {
   const playerTwoData = getPlayersData(players[1]);
   return axios.all([playerOneData, playerTwoData])
     .then(calculateScores)
-    .catch(function (err) {console.warn('Error in getPlayersInfo: ', err)})
+    .catch((err) => {console.warn('Error in getPlayersInfo: ', err)})
 }
