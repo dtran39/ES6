@@ -16,17 +16,17 @@ const PromptContainer = React.createClass({
     this.setState({
       username: ''
     });
-
-    if (this.props.routeParams.playerOne) {
+    const {playerOne} = this.props.routeParams
+    if (playerOne) {
       this.context.router.push({
         pathname: '/battle',
         query: {
-          playerOne: this.props.routeParams.playerOne,
+          playerOne, // Concise object allows us to just pass in one thing if key and value is the same
           playerTwo: username,
         }
       })
     } else {
-      this.context.router.push('/playerTwo/' + username)
+      this.context.router.push(`/playerTwo/${username}`)
     }
   },
   handleUpdateUser: function (event) {
